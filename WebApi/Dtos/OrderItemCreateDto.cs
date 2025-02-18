@@ -1,6 +1,6 @@
 ﻿namespace WebApi.Dtos
 {
-    public class UserResponseDto
+    public class OrderItemCreateDto
     {
     }
 }
