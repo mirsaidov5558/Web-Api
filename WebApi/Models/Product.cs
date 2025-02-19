@@ -9,7 +9,6 @@
         public decimal Price { get; set; }
 
         public Category Category { get; set; }
-
         public List <Review> Reviews { get; set; }
         public List <Category> OrderItems { get; set; }
     }
