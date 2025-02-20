@@ -14,7 +14,19 @@ namespace WebApi.Configuration
             builder.Property(x => x.UserName).IsRequired().HasMaxLength(100);
             builder.Property(x => x.Email).IsRequired().HasMaxLength(255);
             builder.Property(x => x.PasswordHash).IsRequired();
-            builder.HasIndex(x => x.Email).IsUnique();
+            
+
+            builder.HasMany(x => x.Orders)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasMany(x => x.Reviews)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+
         }
     }
 
