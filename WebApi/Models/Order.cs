@@ -11,6 +11,6 @@
 
 
         public User User { get; set; }
-        public List<OrderItem> OrderItem { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
     }
 }
