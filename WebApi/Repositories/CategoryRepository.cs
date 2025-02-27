@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApi.Data;
+using WebApi.Interfaces.Repositories;
 using WebApi.Models;
 using WebApi.Repositories.Interface;
 
@@ -19,7 +20,7 @@ namespace WebApi.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async void Delete(int id)
+        public async Task Delete(int id)
         {
             var category = await _context.Categories.FindAsync(id);
             if (category != null) 
@@ -27,6 +28,11 @@ namespace WebApi.Repositories
                 _context.Categories.Remove(category);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public void Delete(Category? category)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<bool> ExistsAsync(int id)
@@ -57,10 +63,12 @@ namespace WebApi.Repositories
             return await _context.Categories.Where(c => c.ParentCategoryId == parentId).ToListAsync();
         }
 
-        public async void Update(Category category)
+        public async Task Update(Category category)
         {
             _context.Categories.Update(category);
             await _context.SaveChangesAsync();
         }
+
+        
     }
 }

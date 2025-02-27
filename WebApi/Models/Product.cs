@@ -9,7 +9,7 @@
         public decimal Price { get; set; }
 
         public Category Category { get; set; }
-        public List <Review> Reviews { get; set; } = new List<Review>();
-        public List <OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }

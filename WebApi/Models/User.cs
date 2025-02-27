@@ -8,10 +8,10 @@ namespace WebApi.Models
         public string UserName { get; set; }
         public string Email { get; set; }
         public string PasswordHash {  get; set; }
-        public Role Role { get; set; }
+        public Role Role { get; set; } = Role.User;
         
 
-        public List<Order> Orders {  get; set; } = new List<Order>();
-        public List<Review> Reviews { get; set; } = new List<Review>();
+        public ICollection<Order> Orders {  get; set; } = new List<Order>();
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }

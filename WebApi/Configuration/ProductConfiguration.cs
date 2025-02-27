@@ -38,12 +38,6 @@ namespace WebApi.Configuration
                 .HasForeignKey(x => x.ProductId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            
-
-            
-                
-
-            
         }
     }
 }

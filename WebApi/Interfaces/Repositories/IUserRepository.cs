@@ -9,7 +9,7 @@ namespace WebApi.Repositories.Interface
         Task<List<User>> GetFilteredUsersAsync(string? email, string? name);
         Task AddAsync(User user);
         Task UpdateAsync(User user);
-        Task DeleteAsync(User user);
+        Task DeleteAsync(int id);
 
 
         Task<User?> GetByUsernameAsync(string username);

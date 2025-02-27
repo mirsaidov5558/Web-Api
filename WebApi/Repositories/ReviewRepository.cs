@@ -2,7 +2,7 @@
 
 namespace WebApi.Repositories
 {
-    public class ProductRepositories : IProductRepository
+    public class ReviewRepository : IReviewRepository
     {
     }
 }

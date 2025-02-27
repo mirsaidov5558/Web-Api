@@ -19,6 +19,12 @@ namespace WebApi.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task CreateAsync(List<OrderItem> orderItems)
+        {
+            _context.OrderItems.AddRange(orderItems);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task Delete(int id)
         {
             var orderItem = await _context.OrderItems.FindAsync(id);

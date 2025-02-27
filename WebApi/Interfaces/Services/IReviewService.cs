@@ -1,4 +1,4 @@
-﻿namespace WebApi.Service.ReviewService
+﻿namespace WebApi.Interfaces.Services
 {
     public interface IReviewService
     {

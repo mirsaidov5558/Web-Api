@@ -6,9 +6,10 @@ namespace WebApi.Repositories.Interface
     {
         Task<Order> GetByIdAsync(int id);
         Task<List<Order>> GetAllAsync();
-        Task<List<Order>> GetFilteredOrdersAsync(int? userId, string status);
+        Task<List<Order>> GetFilteredOrdersAsync(int? userId, string? status);
+        Task UpdateStatusAsync(int orderId, string status);
         Task AddAsync(Order order);
-        void Update(Order order);
-        void Delete(Order order);
+        Task Update(Order order);
+        Task Delete(int id);
     }
 }

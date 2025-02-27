@@ -6,9 +6,9 @@ namespace WebApi.Repositories.Interface
     {
         Task<Product> GetByIdAsync(int id);
         Task<List<Product>> GetAllAsync();
-        Task<List<Product>> GetFilteredProductsAsync(int? cattegoryId, string productName, decimal price);
+        Task<List<Product>> GetFilteredProductsAsync(int? categoryId, string? productName, decimal? minPrice, decimal? maxPrice);
         Task AddAsync(Product product);
         void Update(Product product);
-        void Delete(Product product);
+        void Delete(int id);
     }
 }
