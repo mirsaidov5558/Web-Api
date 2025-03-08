@@ -5,12 +5,12 @@ using WebApi.Repositories;
 using WebApi.Repositories.Interface;
 using WebApi.Service.OrderService;
 
-namespace WebApi.Interfaces.Services
+namespace WebApi.Service
 {
     public class OrderService(IOrderRepository orderRepository, IOrderItemRepository orderItemRepository) : IOrderService
     {
-        private readonly IOrderRepository _orderRepository= orderRepository;
-        private readonly IOrderItemRepository _orderItemRepository= orderItemRepository;
+        private readonly IOrderRepository _orderRepository = orderRepository;
+        private readonly IOrderItemRepository _orderItemRepository = orderItemRepository;
 
         public Task<bool> Create(string name, int? userId, DateTime createdAt, string status)
         {
@@ -52,7 +52,7 @@ namespace WebApi.Interfaces.Services
 
         public Task<List<Order>> GetListAsync(int userId)
         {
-            if(userId<=0) throw     
+            if (userId <= 0) throw
         }
 
         public Task<bool> Update(string newName, int? userId, DateTime createdAt, string status)
